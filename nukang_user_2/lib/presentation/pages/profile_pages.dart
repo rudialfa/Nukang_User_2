@@ -25,6 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
   void initState() {
     super.initState();
     nameController = TextEditingController(text: userName);
+    // asas
     addressController = TextEditingController(text: userAddress);
     phoneController = TextEditingController(text: userPhone);
     emailController = TextEditingController(text: userEmail);
@@ -44,12 +45,17 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (BuildContext context) => StatefulBuilder(
         builder: (context, setDialogState) => AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
           title: const Row(
             children: [
               Icon(Icons.edit, color: Color(0xFF1976D2)),
               SizedBox(width: 12),
-              Text('Edit Profil', style: TextStyle(fontWeight: FontWeight.bold)),
+              Text(
+                'Edit Profil',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ],
           ),
           content: SingleChildScrollView(
@@ -60,7 +66,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 GestureDetector(
                   onTap: () {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Fitur upload foto dalam pengembangan')),
+                      const SnackBar(
+                        content: Text('Fitur upload foto dalam pengembangan'),
+                      ),
                     );
                   },
                   child: Container(
@@ -68,7 +76,10 @@ class _ProfilePageState extends State<ProfilePage> {
                     height: 100,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: const Color(0xFF1976D2), width: 3),
+                      border: Border.all(
+                        color: const Color(0xFF1976D2),
+                        width: 3,
+                      ),
                       image: DecorationImage(
                         image: NetworkImage(profileImage),
                         fit: BoxFit.cover,
@@ -85,7 +96,11 @@ class _ProfilePageState extends State<ProfilePage> {
                               color: const Color(0xFF1976D2),
                               shape: BoxShape.circle,
                             ),
-                            child: const Icon(Icons.camera_alt, color: Colors.white, size: 20),
+                            child: const Icon(
+                              Icons.camera_alt,
+                              color: Colors.white,
+                              size: 20,
+                            ),
                           ),
                         ),
                       ],
@@ -100,7 +115,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   decoration: InputDecoration(
                     labelText: 'Nama Lengkap',
                     prefixIcon: const Icon(Icons.person),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -109,7 +126,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   decoration: InputDecoration(
                     labelText: 'Alamat',
                     prefixIcon: const Icon(Icons.location_on),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                   maxLines: 2,
                 ),
@@ -119,7 +138,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   decoration: InputDecoration(
                     labelText: 'No. Handphone',
                     prefixIcon: const Icon(Icons.phone),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                   keyboardType: TextInputType.phone,
                 ),
@@ -129,7 +150,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   decoration: InputDecoration(
                     labelText: 'Email',
                     prefixIcon: const Icon(Icons.email),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
@@ -184,7 +207,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 color: Colors.orange.withAlpha(25),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.construction, size: 64, color: Colors.orange),
+              child: const Icon(
+                Icons.construction,
+                size: 64,
+                color: Colors.orange,
+              ),
             ),
             const SizedBox(height: 20),
             Text(
@@ -219,7 +246,10 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             Icon(Icons.logout, color: Colors.red),
             SizedBox(width: 12),
-            Text('Logout', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red)),
+            Text(
+              'Logout',
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+            ),
           ],
         ),
         content: const Text(
@@ -277,7 +307,9 @@ class _ProfilePageState extends State<ProfilePage> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
-                boxShadow: [BoxShadow(color: Colors.black.withAlpha(10), blurRadius: 10)],
+                boxShadow: [
+                  BoxShadow(color: Colors.black.withAlpha(10), blurRadius: 10),
+                ],
               ),
               child: Column(
                 children: [
@@ -288,7 +320,10 @@ class _ProfilePageState extends State<ProfilePage> {
                       height: 120,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: const Color(0xFF1976D2), width: 4),
+                        border: Border.all(
+                          color: const Color(0xFF1976D2),
+                          width: 4,
+                        ),
                         image: DecorationImage(
                           image: NetworkImage(profileImage),
                           fit: BoxFit.cover,
@@ -299,7 +334,10 @@ class _ProfilePageState extends State<ProfilePage> {
                   const SizedBox(height: 20),
                   Text(
                     userName,
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Text(
@@ -319,11 +357,31 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 32),
 
             // Menu Profile
-            _buildMenuItem('Rekening & Refund', Icons.account_balance_wallet, () => _showComingSoonDialog('Rekening & Refund')),
-            _buildMenuItem('Ketentuan & Layanan', Icons.description, () => _showComingSoonDialog('Ketentuan & Layanan')),
-            _buildMenuItem('Pusat Bantuan', Icons.help, () => _showComingSoonDialog('Pusat Bantuan')),
-            _buildMenuItem('Beri Rating', Icons.star, () => _showComingSoonDialog('Beri Rating')),
-            _buildMenuItem('Hubungi Kami', Icons.contact_phone, () => _showComingSoonDialog('Hubungi Kami')),
+            _buildMenuItem(
+              'Rekening & Refund',
+              Icons.account_balance_wallet,
+              () => _showComingSoonDialog('Rekening & Refund'),
+            ),
+            _buildMenuItem(
+              'Ketentuan & Layanan',
+              Icons.description,
+              () => _showComingSoonDialog('Ketentuan & Layanan'),
+            ),
+            _buildMenuItem(
+              'Pusat Bantuan',
+              Icons.help,
+              () => _showComingSoonDialog('Pusat Bantuan'),
+            ),
+            _buildMenuItem(
+              'Beri Rating',
+              Icons.star,
+              () => _showComingSoonDialog('Beri Rating'),
+            ),
+            _buildMenuItem(
+              'Hubungi Kami',
+              Icons.contact_phone,
+              () => _showComingSoonDialog('Hubungi Kami'),
+            ),
 
             const SizedBox(height: 32),
 
@@ -335,7 +393,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 onPressed: _showLogoutDialog,
                 style: OutlinedButton.styleFrom(
                   side: const BorderSide(color: Colors.red, width: 2),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -344,7 +404,11 @@ class _ProfilePageState extends State<ProfilePage> {
                     const SizedBox(width: 12),
                     const Text(
                       'Logout',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.red),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red,
+                      ),
                     ),
                   ],
                 ),
@@ -363,7 +427,9 @@ class _ProfilePageState extends State<ProfilePage> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [BoxShadow(color: Colors.black.withAlpha(5), blurRadius: 10)],
+        boxShadow: [
+          BoxShadow(color: Colors.black.withAlpha(5), blurRadius: 10),
+        ],
       ),
       child: Row(
         children: [
@@ -373,9 +439,18 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: TextStyle(fontSize: 14, color: Colors.grey[600])),
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                ),
                 const SizedBox(height: 4),
-                Text(value, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                Text(
+                  value,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               ],
             ),
           ),
@@ -393,7 +468,9 @@ class _ProfilePageState extends State<ProfilePage> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
-          boxShadow: [BoxShadow(color: Colors.black.withAlpha(5), blurRadius: 10)],
+          boxShadow: [
+            BoxShadow(color: Colors.black.withAlpha(5), blurRadius: 10),
+          ],
         ),
         child: Row(
           children: [
@@ -409,7 +486,10 @@ class _ProfilePageState extends State<ProfilePage> {
             Expanded(
               child: Text(
                 title,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
             const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
